@@ -62,9 +62,24 @@ const DashboardPage = () => {
 
   return (
     <Box className="page-container">
-      <Typography variant="h4" className="page-header">
-        Dashboard
-      </Typography>
+      <Box className="page-header">
+        <Box>
+          <Typography variant="h4" className="page-title">
+            Operations Center
+          </Typography>
+          <Typography variant="body1" className="page-subtitle">
+            Real-time visibility into transaction risk and bank activity.
+          </Typography>
+        </Box>
+        <Box className="chart-card" sx={{ minWidth: 180, py: 2 }}>
+          <Typography variant="caption" sx={{ color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+            Live status
+          </Typography>
+          <Typography variant="h6" sx={{ fontWeight: 800, color: '#0f9d7c' }}>
+            System Healthy
+          </Typography>
+        </Box>
+      </Box>
       <Grid container spacing={3} className="stats-grid">
         <Grid item xs={12} sm={6} md={3}>
           <Paper className="chart-card">

@@ -17,12 +17,50 @@ import ProtectedRoute from './routes/ProtectedRoute.jsx';
 const theme = createTheme({
   palette: {
     mode: 'light',
-    primary: { main: '#0b3d91' },
-    secondary: { main: '#1976d2' },
-    background: { default: '#f1f5fb', paper: '#ffffff' },
+    primary: { main: '#2563eb', contrastText: '#ffffff' },
+    secondary: { main: '#7c3aed' },
+    background: { default: '#f4f7ff', paper: '#ffffff' },
+    success: { main: '#0f9d7c' },
+    warning: { main: '#f59e0b' },
+    error: { main: '#ef4444' },
   },
   typography: {
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: 'Inter, "Segoe UI", sans-serif',
+    h4: { fontWeight: 800 },
+    h5: { fontWeight: 700 },
+    h6: { fontWeight: 700 },
+  },
+  shape: {
+    borderRadius: 16,
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 999,
+          textTransform: 'none',
+          minHeight: 44,
+          fontWeight: 700,
+          boxShadow: 'none',
+          '&:hover': {
+            boxShadow: 'none',
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 18,
+          boxShadow: '0 14px 34px rgba(15, 23, 42, 0.08)',
+        },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: 'outlined',
+      },
+    },
   },
 });
 

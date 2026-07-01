@@ -4,6 +4,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
@@ -22,17 +23,20 @@ const navItems = [
 
 const Sidebar = () => {
   return (
-    <Box sx={{ width: 260, bgcolor: '#082b66', color: '#ffffff', minHeight: '100vh' }}>
+    <Box sx={{ width: 280, minHeight: '100vh', background: 'linear-gradient(180deg, #0f2c63 0%, #2563eb 100%)', color: '#ffffff', py: 2, position: 'sticky', top: 0 }}>
       <Box className="sidebar-brand">Secure Finance AI</Box>
-      <List>
+      <Typography variant="overline" sx={{ px: 3, pt: 2, pb: 1, display: 'block', color: 'rgba(255,255,255,0.72)', letterSpacing: '0.18em' }}>
+        Workspace
+      </Typography>
+      <List sx={{ px: 1 }}>
         {navItems.map((item) => (
           <ListItemButton
             component={NavLink}
             to={item.path}
             key={item.path}
-            sx={{ color: '#ffffff', '&.active': { backgroundColor: 'rgba(255,255,255,0.08)' } }}
+            sx={{ color: '#ffffff', '&.active': { backgroundColor: 'rgba(255,255,255,0.16)' } }}
           >
-            <ListItemIcon sx={{ color: '#ffffff' }}>{item.icon}</ListItemIcon>
+            <ListItemIcon sx={{ color: '#ffffff', minWidth: 40 }}>{item.icon}</ListItemIcon>
             <ListItemText primary={item.label} />
           </ListItemButton>
         ))}

@@ -35,71 +35,76 @@ const RegisterPage = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <Box className="auth-card">
-        <Avatar sx={{ m: '0 auto', bgcolor: '#0b3d91' }}>
-          <PersonAddIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5" align="center" sx={{ mt: 2, mb: 3 }}>
-          Create Account
-        </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="name"
-            label="Full Name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="email"
-            label="Email Address"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          <TextField
-            margin="normal"
-            select
-            fullWidth
-            name="role"
-            label="Role"
-            value={formData.role}
-            onChange={handleChange}
-            SelectProps={{ native: true }}
-          >
-            <option value="ADMIN">ADMIN</option>
-            <option value="ANALYST">ANALYST</option>
-            <option value="BANK_USER">BANK_USER</option>
-          </TextField>
-          {error && (
-            <Typography color="error" sx={{ mt: 1 }}>
-              {error}
-            </Typography>
-          )}
-          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-            Register
-          </Button>
-          <Typography variant="body2" align="center">
-            Already have an account? <Link to="/login">Login</Link>
+    <Box className="auth-shell">
+      <Container component="main" maxWidth="sm">
+        <Box className="auth-card">
+          <Avatar sx={{ m: '0 auto', bgcolor: '#2563eb' }}>
+            <PersonAddIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5" align="center" sx={{ mt: 2, mb: 1 }}>
+            Create your workspace
           </Typography>
+          <Typography variant="body2" align="center" sx={{ color: '#64748b', mb: 3 }}>
+            Start collaborating on fraud risk monitoring in minutes.
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="name"
+              label="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="email"
+              label="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              select
+              fullWidth
+              name="role"
+              label="Role"
+              value={formData.role}
+              onChange={handleChange}
+              SelectProps={{ native: true }}
+            >
+              <option value="ADMIN">ADMIN</option>
+              <option value="ANALYST">ANALYST</option>
+              <option value="BANK_USER">BANK_USER</option>
+            </TextField>
+            {error && (
+              <Typography color="error" sx={{ mt: 1 }}>
+                {error}
+              </Typography>
+            )}
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+              Register
+            </Button>
+            <Typography variant="body2" align="center">
+              Already have an account? <Link to="/login">Login</Link>
+            </Typography>
+          </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 
